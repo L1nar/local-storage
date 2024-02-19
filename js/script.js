@@ -62,5 +62,15 @@ let arr = [1, 2, 3, 4, 5];
 // метод JSON.stringify берёт объект и преобразует его в строку
 // Полученна строка json называется JSON - форматированным или сериализованным объектом
 // Мы можем отправить его по сети или поместить в обычное хранилище данных
+// JSON.parse(); - преобразовать JSON в структуру данных JavaScript
 
+localStorage.setItem('arr', JSON.stringify(arr));
+
+arr = localStorage.getItem('arr');
+console.log(`${arr} тип: ${typeof arr}`);
+
+arr = JSON.parse(arr);
+console.log(`${arr} массив: ${Array.isArray(arr)}`);
+
+arr.push(100);
 localStorage.setItem('arr', JSON.stringify(arr));
